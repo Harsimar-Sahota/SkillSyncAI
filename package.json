@@ -1,10 +1,14 @@
 {
-  "name": "skillsyncai",
+  "name": "skillsyncai-monorepo",
   "version": "1.0.0",
-  "description": "AI Agent-based skill-building assistant",
-  "main": "index.js",
+  "private": true,
+  "description": "AI Agent-based skill-building assistant (Monorepo)",
   "scripts": {
-    "dev": "nodemon src/index.ts"
+    "dev": "pnpm --parallel --filter \"./server\" --filter \"./client\" run dev",
+    "build": "pnpm --filter \"./**\" run build",
+    "install:root": "pnpm install --shamefully-hoist",
+    "clean": "pnpm --recursive exec -- rm -rf node_modules dist .turbo *.tsbuildinfo",
+    "clean:hard": "pnpm clean && rm -rf node_modules .pnpm-store"
   },
   "repository": {
     "type": "git",
@@ -17,20 +21,10 @@
     "url": "https://github.com/Harsimar-Sahota/SkillSyncAI/issues"
   },
   "homepage": "https://github.com/Harsimar-Sahota/SkillSyncAI#readme",
-  "dependencies": {
-    "axios": "^1.8.4",
-    "date-fns": "^4.1.0",
-    "dotenv": "^16.5.0",
-    "openai": "^4.93.0",
-    "pdf-parse": "^1.1.1",
-    "puppeteer": "^24.6.1",
-    "semantic-kernel": "^0.1.0",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.8.3"
-  },
   "devDependencies": {
     "@types/node": "^22.14.0",
-    "@types/pdf-parse": "^1.1.5",
-    "nodemon": "^3.1.9"
+    "typescript": "^5.8.3",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2"
   }
 }
