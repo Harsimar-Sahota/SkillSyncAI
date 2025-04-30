@@ -1,11 +1,44 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build artifacts
+dist/
+build/
+out/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
 # Logs
 logs
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
 lerna-debug.log*
-.pnpm-debug.log*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE specific files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Test outputs
+coverage/
 
 # Runtime and diagnostic
 pids
@@ -15,27 +48,21 @@ pids
 report.*.json
 
 # Coverage and test outputs
-coverage
 .nyc_output
 *.lcov
 *.tgz
 
 # Build and cache
-dist/
-build/
 .cache/
 .parcel-cache/
 .next/
 .nuxt/
-out/
 .temp/
 .rpt2_cache/
-.rts2_cache_*
 .rts2_cache_*
 .serverless/
 
 # Dependency directories
-node_modules/
 jspm_packages/
 bower_components/
 web_modules/
@@ -45,17 +72,12 @@ web_modules/
 .yarn/install-state.gz
 .pnp.*
 
-# TypeScript
-*.tsbuildinfo
-
 # Linting and tooling
 .eslintcache
 .stylelintcache
 
 # dotenv files
-.env
 .env.local
-.env.*.local
 
 # App-specific
 sk-memory/
@@ -66,9 +88,7 @@ scratch/
 *.tmp
 
 # GitHub Copilot temp files
-.idea/
 *.swp
-.DS_Store
 
 # Python hybrid support (optional)
 *.ipynb
